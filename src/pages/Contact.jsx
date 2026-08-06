@@ -15,6 +15,7 @@ import { supabase } from '../lib/supabase';
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
+  phone: z.string().regex(/^(\+\d{1,3}[- ]?)?\d{10}$/, 'Please enter a valid 10-digit phone number.'),
   subject: z.string().min(5, 'Subject must be at least 5 characters.'),
   message: z.string().min(10, 'Message must be at least 10 characters.'),
 });
@@ -27,6 +28,7 @@ export default function Contact() {
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
       subject: '',
       message: '',
     },
@@ -46,7 +48,7 @@ export default function Contact() {
             name: data.name, 
             email: data.email, 
             subject: data.subject, 
-            message: data.message 
+            message: `Phone: ${data.phone}\n\n${data.message}` 
           }
         ]);
 
@@ -148,13 +150,23 @@ export default function Contact() {
                       </FormItem>
                     )} />
                     
-                    <FormField control={form.control} name="email" render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Your Email</FormLabel>
-                        <FormControl><Input type="email" placeholder="john@example.com" {...field} /></FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
+                    <div className="grid grid-cols-2 gap-4">
+                      <FormField control={form.control} name="email" render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Your Email</FormLabel>
+                          <FormControl><Input type="email" placeholder="john@example.com" {...field} /></FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )} />
+
+                      <FormField control={form.control} name="phone" render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Your Phone</FormLabel>
+                          <FormControl><Input type="tel" placeholder="+91 XXXXXXXXXX" {...field} /></FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )} />
+                    </div>
 
                     <FormField control={form.control} name="subject" render={({ field }) => (
                       <FormItem>

@@ -15,7 +15,7 @@ import { supabase } from '../lib/supabase';
 const formSchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
-  phone: z.string().min(10, 'Please enter a valid phone number.'),
+  phone: z.string().regex(/^(\+\d{1,3}[- ]?)?\d{10}$/, 'Please enter a valid 10-digit phone number.'),
   position: z.string().min(2, 'Please specify the position you are applying for.'),
   resumeLink: z.string().url('Please provide a valid URL to your resume.'),
   coverLetter: z.string().optional(),

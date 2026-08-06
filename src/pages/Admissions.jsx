@@ -134,6 +134,8 @@ export default function Admissions() {
                 <input 
                   type="tel" 
                   placeholder="Phone Number" 
+                  pattern="^(\+\d{1,3}[- ]?)?\d{10}$"
+                  title="Please enter a valid 10-digit phone number."
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" 
