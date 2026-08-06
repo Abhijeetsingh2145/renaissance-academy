@@ -88,7 +88,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted border flex items-center justify-center"
             >
-              <img src="https://renaissanceacademy.org.in/assets/images/gallery.jpg" alt="School Gallery" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" alt="School Classroom and Students" className="w-full h-full object-cover" />
             </motion.div>
             
             <motion.div 

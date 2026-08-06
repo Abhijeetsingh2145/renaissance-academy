@@ -25,7 +25,7 @@ export function InteractiveCampusMap() {
       <div className="relative w-full max-w-4xl mx-auto aspect-video bg-muted rounded-2xl overflow-hidden shadow-sm border">
         {/* Actual map graphic */}
         <div className="absolute inset-0">
-          <img src="https://renaissanceacademy.org.in/assets/images/video-tour.jpg" alt="Campus Map Background" className="w-full h-full object-cover opacity-50 dark:opacity-40" />
+          <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=2070&auto=format&fit=crop" alt="Campus Map Background" className="w-full h-full object-cover opacity-50 dark:opacity-40" />
         </div>
         
         {locations.map((loc) => (
