@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "title": "Admissions Open for Session 2026-27",
+    "date": "2026-08-01",
+    "category": "Admissions",
+    "content": "Admissions for the upcoming academic session are now open for classes I to IX. Interested parents can collect the forms from the school reception."
+  },
+  {
+    "id": "2",
+    "title": "Half Yearly Examination Schedule",
+    "date": "2026-08-05",
+    "category": "Academics",
+    "content": "The half-yearly examinations for classes VI to XII will commence from September 15, 2026. The detailed schedule has been sent via email."
+  },
+  {
+    "id": "3",
+    "title": "Independence Day Celebrations",
+    "date": "2026-08-10",
+    "category": "Events",
+    "content": "Flag hoisting ceremony will be held on August 15 at 8:00 AM in the school ground. Attendance is mandatory for all students."
+  },
+  {
+    "id": "4",
+    "title": "Parent-Teacher Meeting (PTM)",
+    "date": "2026-07-20",
+    "category": "Academics",
+    "content": "A PTM is scheduled for July 30, 2026, to discuss the progress of students. Timings: 9:00 AM to 1:00 PM."
+  },
+  {
+    "id": "5",
+    "title": "Inter-School Debate Competition",
+    "date": "2026-08-12",
+    "category": "Events",
+    "content": "Students interested in participating in the upcoming debate competition must register their names with their respective class teachers by August 20."
+  }
+]
