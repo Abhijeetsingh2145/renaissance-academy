@@ -7,7 +7,41 @@ import { FAQSection } from '../components/admissions/FAQSection';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 
+import { supabase } from '../lib/supabase';
+
+// Add this above the component or inside it
 export default function Admissions() {
+  const [formData, setFormData] = React.useState({ name: '', email: '', phone: '' });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const { error } = await supabase
+        .from('contact_inquiries')
+        .insert([{
+          name: formData.name,
+          email: formData.email,
+          subject: 'Admissions Inquiry',
+          message: `Phone Number: ${formData.phone}`
+        }]);
+
+      if (error) throw error;
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '' });
+    } catch (err) {
+      console.error(err);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const steps = [
     { title: "Inquiry & Registration", desc: "Fill out the online inquiry form or visit the school campus to register your interest." },
     { title: "Assessment & Interaction", desc: "Depending on the grade applied for, students may be required to take a brief assessment." },
@@ -80,11 +114,36 @@ export default function Admissions() {
               <h3 className="text-xl font-bold text-primary mb-2">Apply Now</h3>
               <p className="text-sm text-muted-foreground mb-6">Submit your initial details and our admissions team will contact you shortly.</p>
               
-              <form className="flex flex-col gap-4">
-                <input type="text" placeholder="Parent's Name" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required />
-                <input type="email" placeholder="Email Address" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required />
-                <input type="tel" placeholder="Phone Number" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required />
-                <Button type="button" className="w-full mt-2">Submit Inquiry</Button>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <input 
+                  type="text" 
+                  placeholder="Parent's Name" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" 
+                  required 
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" 
+                  required 
+                />
+                <input 
+                  type="tel" 
+                  placeholder="Phone Number" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" 
+                  required 
+                />
+                <Button type="submit" disabled={isSubmitting} className="w-full mt-2">
+                  {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
+                </Button>
+                {submitStatus === 'success' && <p className="text-green-600 text-sm mt-2 font-medium text-center">Inquiry submitted successfully!</p>}
+                {submitStatus === 'error' && <p className="text-red-500 text-sm mt-2 text-center">Failed to submit. Please try again.</p>}
               </form>
             </motion.div>
 
