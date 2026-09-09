@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Base Colors */
+  --background: #ffffff;
+  --foreground: #172033; /* Primary Dark Text (Avoid pure black) */
+
+  /* 1. PRIMARY BRAND — Trust & Academic Credibility */
+  --brand-primary: #1e3278;
+  --brand-primary-hover: #16265c;
+  --brand-deep: #142454; /* Deep Navy for depth & high contrast */
+
+  /* 2. LEARNING BLUE — Curiosity & Education */
+  --brand-sky: #4f8fe8;
+  --surface-sky: #eaf3ff; /* Pale Sky */
+
+  /* 3. ACHIEVEMENT GOLD — Excellence & Celebration */
+  --accent-gold: #f4c542;
+  --surface-yellow: #fff3bf; /* Soft Sun Yellow Surface */
+
+  /* 4. GROWTH MINT — Development & Freshness */
+  --accent-mint: #72c6a5;
+  --surface-mint: #eaf8f2; /* Soft Mint */
+
+  /* 5. HUMAN WARMTH — Community & Creative Expression */
+  --accent-coral: #f28c8c;
+  --surface-coral: #fff0f0; /* Soft Coral Surface */
+
+  /* 6. HERITAGE CREAM — Warmth & Human Connection */
+  --surface-cream: #fff8ea;
+
+  /* 7. NEUTRALS & TEXT */
+  --surface-neutral: #f5f7fa;
+  --text-primary: #172033;
+  --text-secondary: #475569;
+
+  /* Legacy Brand Scale */
+  --brand-50: #eaf3ff;
+  --brand-100: #dbe8fe;
+  --brand-200: #bfd8fe;
+  --brand-300: #93c1fd;
+  --brand-400: #4f8fe8;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #142454;
+  --brand-900: #1e3278;
+
+  /* Neutrals */
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #172033;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-deep: var(--brand-deep);
+
+  --color-brand-sky: var(--brand-sky);
+  --color-surface-sky: var(--surface-sky);
+
+  --color-accent-gold: var(--accent-gold);
+  --color-surface-yellow: var(--surface-yellow);
+
+  --color-accent-mint: var(--accent-mint);
+  --color-surface-mint: var(--surface-mint);
+
+  --color-accent-coral: var(--accent-coral);
+  --color-surface-coral: var(--surface-coral);
+
+  --color-surface-cream: var(--surface-cream);
+  --color-surface-neutral: var(--surface-neutral);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
