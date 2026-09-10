@@ -112,6 +112,7 @@ export default function Home() {
                   caption="Welcome to Renaissance Academy — Campus Frontage & Atmosphere"
                   fill
                   priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover rounded-[calc(2.5rem-0.75rem)]"
                   containerClassName="aspect-[4/3] w-full rounded-[calc(2.5rem-0.75rem)] border border-neutral-200/80"
                 />
