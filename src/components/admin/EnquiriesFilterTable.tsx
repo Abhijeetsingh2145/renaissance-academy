@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { format } from 'date-fns'
 import { Phone, Mail, User, BookOpen, MessageSquare, Search, Filter, Layers } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 export interface EnquiryItem {
   id: string
@@ -21,23 +22,43 @@ interface Props {
 }
 
 export function EnquiriesFilterTable({ initialEnquiries }: Props) {
+  const [enquiries, setEnquiries] = useState<EnquiryItem[]>(initialEnquiries)
   const [filterType, setFilterType] = useState<'all' | 'admission' | 'contact'>('all')
   const [searchQuery, setSearchQuery] = useState('')
 
+  // Realtime subscription — new enquiries appear instantly without refresh
+  useEffect(() => {
+    const supabase = createClient()
+    const channel = supabase
+      .channel('enquiries-realtime')
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'enquiries' },
+        (payload) => {
+          setEnquiries((prev) => [payload.new as EnquiryItem, ...prev])
+        }
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [])
+
   // Calculate Counts
   const counts = useMemo(() => {
-    const admission = initialEnquiries.filter((item) => !item.student_name?.startsWith('Contact Form:')).length
-    const contact = initialEnquiries.filter((item) => item.student_name?.startsWith('Contact Form:')).length
+    const admission = enquiries.filter((item) => !item.student_name?.startsWith('Contact Form:')).length
+    const contact = enquiries.filter((item) => item.student_name?.startsWith('Contact Form:')).length
     return {
-      all: initialEnquiries.length,
+      all: enquiries.length,
       admission,
       contact,
     }
-  }, [initialEnquiries])
+  }, [enquiries])
 
   // Filtered List
   const filteredEnquiries = useMemo(() => {
-    return initialEnquiries.filter((item) => {
+    return enquiries.filter((item) => {
       const isContact = item.student_name?.startsWith('Contact Form:')
       
       // Category filter
@@ -57,7 +78,7 @@ export function EnquiriesFilterTable({ initialEnquiries }: Props) {
 
       return true
     })
-  }, [initialEnquiries, filterType, searchQuery])
+  }, [enquiries, filterType, searchQuery])
 
   return (
     <div className="space-y-6">

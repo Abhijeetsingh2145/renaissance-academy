@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { Camera } from 'lucide-react'
+import { Camera, ZoomIn } from 'lucide-react'
+import { useLightbox } from '@/components/providers/ImageLightboxProvider'
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -18,8 +21,10 @@ export function PlaceholderImage({
   assetName, 
   aspectRatio = 'landscape',
   themeVariant = 'royal',
+  onClick,
   ...props 
 }: PlaceholderImageProps) {
+  const lightbox = useLightbox()
   
   const aspectClass = aspectRatio === 'video' ? 'aspect-video' :
                       aspectRatio === 'square' ? 'aspect-square' :
@@ -41,31 +46,51 @@ export function PlaceholderImage({
     ? 'bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 border-slate-600/40 text-white'
     : 'bg-gradient-to-br from-brand-primary via-brand-deep to-slate-950 border-brand-700/50 text-white';
 
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (onClick) {
+      onClick(e)
+    } else {
+      lightbox?.openLightbox({
+        src: '/welcome.jpg', // Fallback campus image background
+        alt: assetName,
+        caption: `${assetName} — Renaissance Academy Facilities`,
+      })
+    }
+  }
+
   return (
     <div 
+      onClick={handleClick}
       className={cn(
-        "relative overflow-hidden rounded-2xl flex flex-col items-center justify-center p-8 text-center border shadow-2xs group transition-all duration-300 hover:shadow-md",
+        "relative overflow-hidden rounded-2xl flex flex-col items-center justify-center p-8 text-center border shadow-2xs group transition-all duration-300 hover:shadow-md cursor-pointer",
         themeClass,
         aspectClass,
         className
       )}
+      title="Click to enlarge facility details"
       {...props}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/15 via-transparent to-transparent pointer-events-none" />
       <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:20px_20px] pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center max-w-xs mx-auto">
-        <div className="bg-white/15 backdrop-blur-md p-3.5 rounded-full border border-white/30 mb-3 group-hover:scale-105 transition-transform duration-300 shadow-xs">
+        <div className="bg-white/15 backdrop-blur-md p-3.5 rounded-full border border-white/30 mb-3 group-hover:scale-110 transition-transform duration-300 shadow-xs relative">
           <Camera className="h-6 w-6 text-white" />
         </div>
         
-        <span className="text-sm font-semibold tracking-wide uppercase text-xs mb-1">
+        <span className="text-xs font-bold tracking-wide uppercase mb-1">
           {assetName}
         </span>
         <span className="text-[11px] text-white/80 font-medium tracking-wider uppercase">
           Renaissance Academy
         </span>
       </div>
+
+      {/* Hover Lightbox Indicator */}
+      <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-md p-1.5 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity">
+        <ZoomIn className="h-4 w-4 text-white" />
+      </div>
     </div>
   )
 }
+

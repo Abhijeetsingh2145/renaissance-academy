@@ -4,6 +4,7 @@ import { H1, H2, Text } from '@/components/ui/Typography'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { 
   ArrowRight, 
   Sparkles, 
@@ -105,24 +106,15 @@ export default function Home() {
             {/* Double-Bezel Enclosed Photo Container */}
             <FadeUp delay={0.2} className="lg:col-span-6">
               <div className="p-3 rounded-[2.5rem] bg-neutral-200/60 border border-neutral-300/70 shadow-md">
-                <div className="relative w-full rounded-[calc(2.5rem-0.75rem)] overflow-hidden border border-neutral-200/80 aspect-[4/3]">
-                  <Image 
-                    src="/welcome.jpg" 
-                    alt="Welcome to Renaissance Academy" 
-                    fill
-                    className="object-cover rounded-[calc(2.5rem-0.75rem)] hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5 text-white">
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-primary/80 px-3 py-1 rounded-full backdrop-blur-xs">
-                      Campus Atmosphere
-                    </span>
-                    <p className="text-xs font-medium text-neutral-200 mt-1.5">
-                      Modern infrastructure designed for concentrated learning and holistic growth.
-                    </p>
-                  </div>
-                </div>
+                <ZoomableImage
+                  src="/welcome.jpg"
+                  alt="Welcome to Renaissance Academy"
+                  caption="Welcome to Renaissance Academy — Campus Frontage & Atmosphere"
+                  fill
+                  priority
+                  className="object-cover rounded-[calc(2.5rem-0.75rem)]"
+                  containerClassName="aspect-[4/3] w-full rounded-[calc(2.5rem-0.75rem)] border border-neutral-200/80"
+                />
               </div>
             </FadeUp>
 
@@ -219,66 +211,60 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <StaggerItem>
               <div className="p-2 rounded-[2rem] bg-neutral-200/50 border border-neutral-300/60 shadow-2xs group">
-                <div className="relative aspect-[4/3] rounded-[calc(2rem-0.5rem)] overflow-hidden border border-neutral-200/80">
-                  <Image
-                    src="/classroom.jpg"
-                    alt="Smart Classrooms - Renaissance Academy"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span className="text-[10px] font-bold tracking-wider uppercase bg-brand-sky/90 text-white px-2.5 py-0.5 rounded-full mb-1.5 inline-block backdrop-blur-xs">
-                      Smart Learning
-                    </span>
-                    <h3 className="text-lg font-bold text-white leading-snug">Smart Classrooms</h3>
-                    <p className="text-xs text-neutral-200 mt-0.5">Interactive digital learning environment</p>
-                  </div>
+                <ZoomableImage
+                  src="/classroom.jpg"
+                  alt="Smart Classrooms - Renaissance Academy"
+                  caption="Smart Classrooms — Interactive digital learning environment"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  containerClassName="aspect-[4/3] rounded-[calc(2rem-0.5rem)] border border-neutral-200/80"
+                />
+                <div className="mt-3 px-3 pb-2">
+                  <span className="text-[10px] font-bold tracking-wider uppercase bg-brand-sky text-white px-2.5 py-0.5 rounded-full mb-1 inline-block">
+                    Smart Learning
+                  </span>
+                  <h3 className="text-base font-bold text-brand-primary">Smart Classrooms</h3>
                 </div>
               </div>
             </StaggerItem>
 
             <StaggerItem>
               <div className="p-2 rounded-[2rem] bg-neutral-200/50 border border-neutral-300/60 shadow-2xs group">
-                <div className="relative aspect-[4/3] rounded-[calc(2rem-0.5rem)] overflow-hidden border border-neutral-200/80">
-                  <Image
-                    src="/science-lab.jpg"
-                    alt="Science Laboratories - Renaissance Academy"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span className="text-[10px] font-bold tracking-wider uppercase bg-blue-700/90 text-white px-2.5 py-0.5 rounded-full mb-1.5 inline-block backdrop-blur-xs">
-                      Practical Labs
-                    </span>
-                    <h3 className="text-lg font-bold text-white leading-snug">Science Laboratories</h3>
-                    <p className="text-xs text-neutral-200 mt-0.5">Hands-on practical experiments & research</p>
-                  </div>
+                <ZoomableImage
+                  src="/science-lab.jpg"
+                  alt="Science Laboratories - Renaissance Academy"
+                  caption="Science Laboratories — Hands-on practical experiments & research"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  containerClassName="aspect-[4/3] rounded-[calc(2rem-0.5rem)] border border-neutral-200/80"
+                />
+                <div className="mt-3 px-3 pb-2">
+                  <span className="text-[10px] font-bold tracking-wider uppercase bg-blue-700 text-white px-2.5 py-0.5 rounded-full mb-1 inline-block">
+                    Practical Labs
+                  </span>
+                  <h3 className="text-base font-bold text-brand-primary">Science Laboratories</h3>
                 </div>
               </div>
             </StaggerItem>
 
             <StaggerItem>
               <div className="p-2 rounded-[2rem] bg-neutral-200/50 border border-neutral-300/60 shadow-2xs group">
-                <div className="relative aspect-[4/3] rounded-[calc(2rem-0.5rem)] overflow-hidden border border-neutral-200/80">
-                  <Image
-                    src="/sports-ground.jpg"
-                    alt="Sports Ground - Renaissance Academy"
-                    fill
-                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span className="text-[10px] font-bold tracking-wider uppercase bg-emerald-700/90 text-white px-2.5 py-0.5 rounded-full mb-1.5 inline-block backdrop-blur-xs">
-                      Physical Health
-                    </span>
-                    <h3 className="text-lg font-bold text-white leading-snug">Sports Ground</h3>
-                    <p className="text-xs text-neutral-200 mt-0.5">Outdoor sports, games & physical training</p>
-                  </div>
+                <ZoomableImage
+                  src="/sports-ground.jpg"
+                  alt="Sports Ground - Renaissance Academy"
+                  caption="Sports Ground — Outdoor sports, athletics & physical training"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  containerClassName="aspect-[4/3] rounded-[calc(2rem-0.5rem)] border border-neutral-200/80"
+                />
+                <div className="mt-3 px-3 pb-2">
+                  <span className="text-[10px] font-bold tracking-wider uppercase bg-emerald-700 text-white px-2.5 py-0.5 rounded-full mb-1 inline-block">
+                    Physical Health
+                  </span>
+                  <h3 className="text-base font-bold text-brand-primary">Sports Ground</h3>
                 </div>
               </div>
             </StaggerItem>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Image from 'next/image'
 import { Container } from '@/components/layout/Container'
 import { H1, H2, H3, Text } from '@/components/ui/Typography'
 import { Card } from '@/components/ui/Card'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { 
   BookOpen, 
@@ -212,15 +212,15 @@ export default function Page() {
                 <Card key={idx} variant={fac.variant} className="p-6 flex flex-col justify-between hover:-translate-y-1 transition-all">
                   <div>
                     {fac.image ? (
-                      <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-xs mb-4 border border-neutral-200/80">
-                        <Image
-                          src={fac.image}
-                          alt={fac.title}
-                          fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      </div>
+                      <ZoomableImage
+                        src={fac.image}
+                        alt={fac.title}
+                        caption={`${fac.title} — ${fac.desc}`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        containerClassName="aspect-video w-full rounded-xl shadow-xs mb-4 border border-neutral-200/80"
+                      />
                     ) : (
                       <PlaceholderImage assetName={fac.asset} aspectRatio="video" themeVariant={fac.theme} className="w-full rounded-xl overflow-hidden shadow-xs mb-4" />
                     )}

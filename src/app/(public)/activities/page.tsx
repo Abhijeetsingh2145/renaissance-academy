@@ -1,8 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
 import { Container } from '@/components/layout/Container'
 import { H1, H2, Text } from '@/components/ui/Typography'
 import { Card, CardContent } from '@/components/ui/Card'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Activity, Compass, Users, Sparkles, Trophy } from 'lucide-react'
 
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
@@ -54,7 +54,7 @@ export default function ActivitiesPage() {
         <Container>
           <H1 className="text-white mb-2 text-3xl md:text-4xl font-bold tracking-tight">Activities & Student Life</H1>
           <Text className="text-blue-100 text-base md:text-lg">
-            Encouraging physical health, creative activities, and teamwork alongside daily studies at Renaissance Academy.
+            Encouraging physical health, creative activities, and teamwork alongside daily studies at Renaissance Academy. Click any photo to enlarge.
           </Text>
         </Container>
       </div>
@@ -92,15 +92,15 @@ export default function ActivitiesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group bg-surface-neutral p-5 rounded-2xl border border-neutral-200/80 shadow-2xs hover:shadow-md transition-all">
-              <div className="relative aspect-video w-full rounded-xl overflow-hidden mb-4 border border-neutral-200">
-                <Image
-                  src="/indoor-games.jpg"
-                  alt="Indoor Active Games - Renaissance Academy"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+              <ZoomableImage
+                src="/indoor-games.jpg"
+                alt="Indoor Active Games - Renaissance Academy"
+                caption="Indoor Active Games — Table tennis, chess, carrom, and indoor recreation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                containerClassName="aspect-video w-full rounded-xl mb-4 border border-neutral-200"
+              />
               <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-200 mb-2 inline-block">
                 Indoor Facility
               </span>
@@ -111,15 +111,15 @@ export default function ActivitiesPage() {
             </div>
 
             <div className="group bg-surface-neutral p-5 rounded-2xl border border-neutral-200/80 shadow-2xs hover:shadow-md transition-all">
-              <div className="relative aspect-video w-full rounded-xl overflow-hidden mb-4 border border-neutral-200">
-                <Image
-                  src="/sports-ground.jpg"
-                  alt="Outdoor Sports & Field Games - Renaissance Academy"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+              <ZoomableImage
+                src="/sports-ground.jpg"
+                alt="Outdoor Sports & Field Games - Renaissance Academy"
+                caption="Outdoor Sports Field — Athletics, football, cricket & physical training"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                containerClassName="aspect-video w-full rounded-xl mb-4 border border-neutral-200"
+              />
               <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full border border-blue-200 mb-2 inline-block">
                 Outdoor Field
               </span>

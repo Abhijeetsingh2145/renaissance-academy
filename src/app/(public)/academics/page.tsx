@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Container } from '@/components/layout/Container'
 import { H1, H2, H3, Text } from '@/components/ui/Typography'
 import { Card } from '@/components/ui/Card'
@@ -190,13 +190,15 @@ export default function AcademicsPage() {
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-5 relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-md border border-neutral-200">
-            <Image
+          <div className="lg:col-span-5 w-full">
+            <ZoomableImage
               src="/classroom.jpg"
               alt="Smart Classrooms at Renaissance Academy"
+              caption="Smart Classrooms — Renaissance Academy"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
+              containerClassName="aspect-[4/3] w-full rounded-2xl shadow-md border border-neutral-200"
             />
           </div>
         </div>

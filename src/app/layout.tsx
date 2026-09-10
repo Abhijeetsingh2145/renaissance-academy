@@ -45,6 +45,7 @@ export const metadata: Metadata = {
 }
 
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
+import { ImageLightboxProvider } from '@/components/providers/ImageLightboxProvider'
 
 export default function RootLayout({
   children,
@@ -57,7 +58,11 @@ export default function RootLayout({
         <SchoolJsonLd />
       </head>
       <body className="antialiased font-sans flex flex-col min-h-screen">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <ImageLightboxProvider>
+            {children}
+          </ImageLightboxProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   )
