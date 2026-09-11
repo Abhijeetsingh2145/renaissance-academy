@@ -86,10 +86,12 @@ export default function Page() {
           <div className="bg-white rounded-2xl border border-neutral-200 p-8 md:p-10 shadow-sm">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="w-full md:w-4/12 shrink-0 space-y-3">
-                <PlaceholderImage 
-                  assetName="Director Portrait" 
-                  aspectRatio="portrait"
-                  className="w-full shadow-sm rounded-xl overflow-hidden" 
+                <ZoomableImage 
+                  src="/director.png"
+                  alt="Director Portrait" 
+                  width={400}
+                  height={500}
+                  className="w-full h-auto shadow-sm rounded-xl overflow-hidden object-cover" 
                 />
                 <div className="bg-brand-50 p-4 rounded-xl border border-brand-100 text-center">
                   <h3 className="font-bold text-brand-900 text-base">Director</h3>
@@ -131,10 +133,12 @@ export default function Page() {
           <div className="bg-white rounded-2xl border border-neutral-200 p-8 md:p-10 shadow-sm">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="w-full md:w-4/12 shrink-0 space-y-3">
-                <PlaceholderImage 
-                  assetName="Principal Portrait (Mrs. Kanak Pandey)" 
-                  aspectRatio="portrait"
-                  className="w-full shadow-sm rounded-xl overflow-hidden" 
+                <ZoomableImage 
+                  src="/principal.jpg"
+                  alt="Principal Portrait (Mrs. Kanak Pandey)" 
+                  width={400}
+                  height={500}
+                  className="w-full h-auto shadow-sm rounded-xl overflow-hidden object-cover" 
                 />
                 <div className="bg-brand-50 p-4 rounded-xl border border-brand-100 text-center">
                   <h3 className="font-bold text-brand-900 text-base">Mrs. Kanak Pandey</h3>
