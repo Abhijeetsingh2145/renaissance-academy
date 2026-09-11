@@ -234,7 +234,10 @@ export function ImageLightboxProvider({ children }: { children: React.ReactNode 
                 <p className="text-white text-sm md:text-base font-semibold leading-snug">
                   {activeItem.caption || activeItem.alt || 'School Facility Preview'}
                 </p>
-                <p className="text-[11px] text-slate-400 mt-0.5">
+                <p className="text-[11px] text-slate-400 mt-0.5 sm:hidden">
+                  Tap image to toggle zoom • Tap X to close
+                </p>
+                <p className="text-[11px] text-slate-400 mt-0.5 hidden sm:block">
                   Click image to toggle zoom • Press Esc to close
                 </p>
               </div>
