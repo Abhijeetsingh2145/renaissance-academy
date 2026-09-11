@@ -39,8 +39,11 @@ export default function GalleryPage() {
     { src: '/gallery-12.jpg', caption: 'Renaissance Academy Campus View 12' },
     { src: '/gallery-13.jpg', caption: 'Renaissance Academy Campus View 13' },
     { src: '/gallery-14.jpg', caption: 'Renaissance Academy Campus View 14' },
-    { src: '/gallery-15.jpg', caption: 'Renaissance Academy Campus View 15' },
+    { src: '/library.jpg', caption: 'Modern Knowledge Library' },
     { src: '/gallery-16.jpg', caption: 'Renaissance Academy Campus View 16' },
+    { src: '/gallery-17.jpg', caption: 'Renaissance Academy Campus Activities 17' },
+    { src: '/gallery-18.jpg', caption: 'Renaissance Academy Campus Activities 18' },
+    { src: '/gallery-19.jpg', caption: 'Renaissance Academy Campus Activities 19' },
   ]
 
   return (

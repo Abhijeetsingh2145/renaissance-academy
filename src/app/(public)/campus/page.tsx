@@ -106,6 +106,7 @@ export default function Page() {
       title: 'Modern Knowledge Library', 
       desc: 'Spacious reading sanctuary featuring curated reference books, storybooks, periodicals, and quiet study areas.', 
       asset: 'Library', 
+      image: '/library.jpg',
       theme: 'cream' as const,
       icon: BookOpen,
       badge: 'Knowledge Hub',
