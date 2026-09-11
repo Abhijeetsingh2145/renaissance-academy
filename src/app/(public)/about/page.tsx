@@ -146,8 +146,8 @@ export default function Page() {
               <div className="w-10 h-10 rounded-xl bg-purple-100/90 text-purple-800 flex items-center justify-center border border-purple-300/80 shadow-2xs mb-3">
                 <GraduationCap className="h-5 w-5 text-purple-800" />
               </div>
-              <div className="text-2xl font-extrabold text-brand-primary">K-10 CBSE</div>
-              <div className="text-xs text-text-secondary mt-1 font-medium">Nursery to Class X complete English-medium schooling</div>
+              <div className="text-2xl font-extrabold text-brand-primary">K-12 CBSE</div>
+              <div className="text-xs text-text-secondary mt-1 font-medium">Nursery to Class XII complete English-medium schooling</div>
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function Page() {
 
             <div className="prose prose-lg text-neutral-700 leading-relaxed space-y-5 text-sm sm:text-base">
               <p>
-                Inaugurated on <strong className="text-brand-primary font-bold">22 March 2014</strong>, Renaissance Academy is located in Baijnathpur, Balapar Road (Landmark: Omkar Ashram), Gorakhpur, UP – 273007 (~4 km from Maniram Railway Station). We offer complete co-educational English-medium schooling from <strong className="text-brand-primary font-bold">Nursery to Class X (K-10)</strong>.
+                Inaugurated on <strong className="text-brand-primary font-bold">22 March 2014</strong>, Renaissance Academy is located in Baijnathpur, Balapar Road (Landmark: Omkar Ashram), Gorakhpur, UP – 273007 (~4 km from Maniram Railway Station). We offer complete co-educational English-medium schooling from <strong className="text-brand-primary font-bold">Nursery to Class XII (K-12)</strong>.
               </p>
               
               <div className="p-4 rounded-2xl bg-amber-50/90 border border-amber-200/90 my-4">
