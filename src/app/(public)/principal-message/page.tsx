@@ -87,7 +87,7 @@ export default function Page() {
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="w-full md:w-4/12 shrink-0 space-y-3">
                 <ZoomableImage 
-                  src="/director.png"
+                  src="/director.jpg"
                   alt="Director Portrait" 
                   width={400}
                   height={500}
