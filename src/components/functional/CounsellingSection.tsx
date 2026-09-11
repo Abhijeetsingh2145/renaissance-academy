@@ -132,8 +132,8 @@ const tilesData: CounsellingTile[] = [
     id: 2,
     title: 'Leadership & Stream Mentorship',
     badge: 'Stream & Study Support',
-    shortDesc: 'Four-House Prefectorial Council leadership roles, team sportsmanship, Class 9–12 academic stream selection support, and goal setting.',
-    fullOverview: 'Senior students gain real responsibility through the Prefectorial Council, house captaincy, sports leadership, and expert Class 9–12 academic stream guidance.',
+    shortDesc: 'Four-House Prefectorial Council leadership roles, team sportsmanship, Class 9 to 12 academic stream selection support, and goal setting.',
+    fullOverview: 'Senior students gain real responsibility through the Prefectorial Council, house captaincy, sports leadership, and expert Class 9 to 12 academic stream guidance.',
     icon: Trophy,
     accentClasses: {
       bgLight: 'bg-emerald-50/80',
@@ -147,7 +147,7 @@ const tilesData: CounsellingTile[] = [
     },
     bullets: [
       'Four-House Student Prefectorial Council',
-      'Class 9–12 Stream Selection & Aptitude Guidance',
+      'Class 9 to 12 Stream Selection & Aptitude Guidance',
       'Moral Courage, Ethics & Team Sports'
     ],
     detailedFeatures: [
@@ -156,7 +156,7 @@ const tilesData: CounsellingTile[] = [
         desc: 'Real student leadership roles in discipline and school events.'
       },
       {
-        title: 'Class 9–12 Stream Guidance',
+        title: 'Class 9 to 12 Stream Guidance',
         desc: 'Aptitude mapping for Science, Commerce & Humanities.'
       },
       {
@@ -166,7 +166,7 @@ const tilesData: CounsellingTile[] = [
     ],
     metrics: [
       { label: 'Student Houses', value: '4 Active Houses' },
-      { label: 'Stream Support', value: 'Class 9–12 Aptitude' },
+      { label: 'Stream Support', value: 'Class 9 to 12 Aptitude' },
       { label: 'Council', value: 'Prefect Roles' }
     ]
   }

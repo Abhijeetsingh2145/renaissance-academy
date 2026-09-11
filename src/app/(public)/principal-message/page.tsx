@@ -70,7 +70,7 @@ export default function Page() {
 
                 <div className="prose prose-neutral text-neutral-700 space-y-3 text-sm md:text-base leading-relaxed">
                   <p>
-                    Welcome to Renaissance Academy. From our inception, our mission has been to provide an educational ecosystem where academic rigor meets timeless moral values. We believe that true education extends beyond grades—it shapes young men and women of strong character, integrity, and social responsibility.
+                    Welcome to Renaissance Academy. From our inception, our mission has been to provide an educational ecosystem where academic rigor meets timeless moral values. We believe that true education extends beyond grades, shaping young men and women of strong character, integrity, and social responsibility.
                   </p>
                   <p>
                     We remain committed to supporting our teachers, enhancing campus facilities, and ensuring every student who walks through our doors is empowered to fulfill their highest potential.
@@ -117,7 +117,7 @@ export default function Page() {
 
                 <div className="prose prose-neutral text-neutral-700 space-y-3 text-sm md:text-base leading-relaxed">
                   <p>
-                    At Renaissance Academy, we constantly upgrade our pedagogical methods, infrastructure, and co-curricular programs to keep pace with global educational standards. Our focus is on holistic development—nurturing intellectual curiosity alongside physical fitness, artistic expression, and analytical thinking.
+                    At Renaissance Academy, we constantly upgrade our pedagogical methods, infrastructure, and co-curricular programs to keep pace with global educational standards. Our focus is on holistic development by nurturing intellectual curiosity alongside physical fitness, artistic expression, and analytical thinking.
                   </p>
                   <p>
                     We work closely with parents and educators to ensure a safe, inclusive, and stimulating learning space for every child.
@@ -162,7 +162,7 @@ export default function Page() {
                     &quot;Education is not the filling of a pail, but the lighting of a fire.&quot;
                   </p>
                   <span className="block text-xs font-semibold text-brand-700 uppercase tracking-wider mt-2">
-                    – W.B. Yeats
+                    W.B. Yeats
                   </span>
                 </div>
 

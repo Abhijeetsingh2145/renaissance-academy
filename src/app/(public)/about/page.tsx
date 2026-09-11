@@ -169,14 +169,14 @@ export default function Page() {
 
             <div className="prose prose-lg text-neutral-700 leading-relaxed space-y-5 text-sm sm:text-base">
               <p>
-                Inaugurated on <strong className="text-brand-primary font-bold">22 March 2014</strong>, Renaissance Academy is located in Baijnathpur, Balapar Road (Landmark: Omkar Ashram), Gorakhpur, UP – 273007 (~4 km from Maniram Railway Station). We offer complete co-educational English-medium schooling from <strong className="text-brand-primary font-bold">Nursery to Class XII (K-12)</strong>.
+                Inaugurated on <strong className="text-brand-primary font-bold">22 March 2014</strong>, Renaissance Academy is located in Baijnathpur, Balapar Road (Landmark: Omkar Ashram), Gorakhpur, UP 273007 (~4 km from Maniram Railway Station). We offer complete co-educational English-medium schooling from <strong className="text-brand-primary font-bold">Nursery to Class XII (K-12)</strong>.
               </p>
               
               <div className="p-4 rounded-2xl bg-amber-50/90 border border-amber-200/90 my-4">
                 <p className="text-sm sm:text-base font-semibold text-amber-900 italic mb-1">
-                  &quot;The word &apos;Renaissance&apos; signifies the rebirth of archaic education—integrating traditional moral teaching with modern scientific methods.&quot;
+                  &quot;The word &apos;Renaissance&apos; signifies the rebirth of archaic education, integrating traditional moral teaching with modern scientific methods.&quot;
                 </p>
-                <span className="text-xs font-bold text-amber-800">— Institutional Philosophy, Renaissance Academy</span>
+                <span className="text-xs font-bold text-amber-800">Institutional Philosophy, Renaissance Academy</span>
               </div>
 
               <p>

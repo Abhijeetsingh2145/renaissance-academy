@@ -81,7 +81,7 @@ export default function FacultyPage() {
                 </div>
                 <div className="space-y-1.5 w-full">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-bold text-brand-primary text-lg">Foundational Stage (Nursery – Class V)</h3>
+                    <h3 className="font-bold text-brand-primary text-lg">Foundational Stage (Nursery to Class V)</h3>
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-white text-brand-sky px-2.5 py-0.5 rounded-full border border-blue-200 shrink-0">
                       Early Years
                     </span>
@@ -100,7 +100,7 @@ export default function FacultyPage() {
                 </div>
                 <div className="space-y-1.5 w-full">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-bold text-brand-primary text-lg">Middle Academic Stage (Class VI – VIII)</h3>
+                    <h3 className="font-bold text-brand-primary text-lg">Middle Academic Stage (Class VI to VIII)</h3>
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-white text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-300 shrink-0">
                       Middle Years
                     </span>
@@ -119,7 +119,7 @@ export default function FacultyPage() {
                 </div>
                 <div className="space-y-1.5 w-full">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-bold text-brand-primary text-lg">Senior Secondary Stage (Class IX – XII)</h3>
+                    <h3 className="font-bold text-brand-primary text-lg">Senior Secondary Stage (Class IX to XII)</h3>
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-white text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-200 shrink-0">
                       Senior Secondary
                     </span>

@@ -91,7 +91,7 @@ const pillars: PillarDetail[] = [
     highlights: [
       '1-on-1 confidential counselling & emotional wellness sessions',
       'Exam stress management & personalized study habit guidance',
-      'Class 9–12 career mentorship & academic stream selection',
+      'Class 9 to 12 career mentorship & academic stream selection',
       'Collaborative parent-counsellor progress check-ins'
     ],
     metrics: [

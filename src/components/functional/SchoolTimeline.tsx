@@ -32,7 +32,7 @@ export const schoolMilestones: Milestone[] = [
     year: '2014',
     dateLabel: '22 March 2014',
     title: 'Inauguration & Founding Vision',
-    description: 'Inaugurated on 22 March 2014. The name "Renaissance" was chosen to signify the rebirth of archaic education—integrating traditional moral values with modern English-medium pedagogy.',
+    description: 'Inaugurated on 22 March 2014. The name "Renaissance" was chosen to signify the rebirth of archaic education, integrating traditional moral values with modern English-medium pedagogy.',
     category: 'Foundation',
     tag: 'Established 2014',
     icon: Building2,
@@ -51,10 +51,10 @@ export const schoolMilestones: Milestone[] = [
   {
     year: '2016',
     dateLabel: 'First Annual Sports Meet',
-    title: 'Inaugural Annual Sports Meet "Aaveg – 2016"',
-    description: 'Hosted the first edition of the school’s annual sports extravaganza "Aaveg – 2016", establishing a strong tradition of track and field athletics, discipline, and team spirit.',
+    title: 'Inaugural Annual Sports Meet "Aaveg 2016"',
+    description: 'Hosted the first edition of the school’s annual sports extravaganza "Aaveg 2016", establishing a strong tradition of track and field athletics, discipline, and team spirit.',
     category: 'Sports & Athletics',
-    tag: 'Aaveg – 2016',
+    tag: 'Aaveg 2016',
     icon: Trophy,
     accentColor: 'border-blue-400 text-brand-primary bg-blue-100'
   },
@@ -79,7 +79,7 @@ export const schoolMilestones: Milestone[] = [
     accentColor: 'border-rose-400 text-rose-900 bg-rose-100'
   },
   {
-    year: '2024–26',
+    year: '2024-2026',
     dateLabel: 'CBSE Affiliation No. 2139',
     title: 'Unnati Scholarship & Academic Conventions (ICON & MEDICON)',
     description: 'Maintains CBSE affiliation (Affiliation No. 2139 / ID: 2132397 valid through 2031). Offers the "Unnati Scholarship Program" providing up to 100% merit scholarships alongside flagship ICON & MEDICON academic events.',

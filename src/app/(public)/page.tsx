@@ -97,7 +97,7 @@ export default function Home() {
                     &quot;Education is not preparation for life; education is life itself.&quot;
                   </blockquote>
                   <figcaption className="text-xs font-semibold text-amber-900 mt-2">
-                    — Institutional Philosophy, Renaissance Academy Gorakhpur
+                    Institutional Philosophy, Renaissance Academy Gorakhpur
                   </figcaption>
                 </figure>
               </div>
@@ -109,7 +109,7 @@ export default function Home() {
                 <ZoomableImage
                   src="/welcome.jpg"
                   alt="Welcome to Renaissance Academy"
-                  caption="Welcome to Renaissance Academy — Campus Frontage & Atmosphere"
+                  caption="Welcome to Renaissance Academy | Campus Frontage & Atmosphere"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -127,21 +127,18 @@ export default function Home() {
       <EducationalValuesInteractive />
 
       {/* 4. INSTITUTIONAL EXCELLENCE HIGHLIGHTS — Double-Bezel Squircle Cards */}
-      <section className="py-16 bg-brand-deep text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl pointer-events-none" />
-
-        <Container className="relative z-10">
+      <section className="py-20 bg-brand-primary text-white border-y border-brand-800">
+        <Container>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            {/* Box 1: K-12 CBSE */}
+            {/* Box 1: CBSE Affiliated */}
             <div className="p-1.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md group hover:bg-white/15 transition-all">
               <div className="p-4 rounded-[calc(1rem-0.125rem)] bg-brand-deep/80 border border-white/10 flex items-center gap-4 h-full">
                 <div className="w-12 h-12 rounded-xl bg-accent-gold/20 text-accent-gold flex items-center justify-center shrink-0 border border-accent-gold/40 group-hover:scale-105 transition-transform">
                   <GraduationCap className="h-6 w-6 text-accent-gold" />
                 </div>
                 <div>
-                  <div className="text-base font-extrabold text-accent-gold">Nursery – 12th</div>
+                  <div className="text-base font-extrabold text-accent-gold">Nursery to 12th</div>
                   <div className="text-xs text-neutral-300 font-medium">K-12 CBSE Curriculum</div>
                 </div>
               </div>
@@ -215,7 +212,7 @@ export default function Home() {
                 <ZoomableImage
                   src="/classroom.jpg"
                   alt="Smart Classrooms - Renaissance Academy"
-                  caption="Smart Classrooms — Interactive digital learning environment"
+                  caption="Smart Classrooms: Interactive digital learning environment"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -235,7 +232,7 @@ export default function Home() {
                 <ZoomableImage
                   src="/science-lab.jpg"
                   alt="Science Laboratories - Renaissance Academy"
-                  caption="Science Laboratories — Hands-on practical experiments & research"
+                  caption="Science Laboratories: Hands-on practical experiments & research"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -255,7 +252,7 @@ export default function Home() {
                 <ZoomableImage
                   src="/sports-ground.jpg"
                   alt="Sports Ground - Renaissance Academy"
-                  caption="Sports Ground — Outdoor sports, athletics & physical training"
+                  caption="Sports Ground: Outdoor sports, athletics & physical training"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -286,7 +283,7 @@ export default function Home() {
             <div className="p-8 sm:p-12 rounded-[calc(3rem-0.75rem)] bg-brand-primary border border-white/10 text-center">
               <FadeUp>
                 <span className="inline-flex items-center gap-2 bg-accent-gold/20 text-accent-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-5 border border-accent-gold/30">
-                  <Sparkles className="h-3.5 w-3.5 text-accent-gold" /> Admissions Open 2025–26 (Nursery to Class XII)
+                  <Sparkles className="h-3.5 w-3.5 text-accent-gold" /> Admissions Open 2025-26 (Nursery to Class XII)
                 </span>
                 
                 <H2 className="text-white mb-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
