@@ -155,108 +155,189 @@ export function EnquiriesFilterTable({ initialEnquiries }: Props) {
         </div>
       </div>
 
-      {/* Main Table View */}
+      {/* Main View: Mobile Cards + Desktop Table */}
       {filteredEnquiries.length === 0 ? (
-        <div className="bg-white p-12 rounded-2xl border border-neutral-200 text-center shadow-xs">
+        <div className="bg-white p-8 md:p-12 rounded-2xl border border-neutral-200 text-center shadow-xs">
           <div className="inline-flex bg-neutral-100 p-4 rounded-full text-neutral-400 mb-4">
             <Filter className="h-8 w-8 text-neutral-400" />
           </div>
-          <h2 className="text-xl font-bold text-neutral-800 mb-2">No Matching Results Found</h2>
-          <p className="text-neutral-500 text-sm">
+          <h2 className="text-lg md:text-xl font-bold text-neutral-800 mb-2">No Matching Results Found</h2>
+          <p className="text-neutral-500 text-xs md:text-sm">
             {searchQuery
               ? `No submissions match "${searchQuery}" in ${filterType === 'all' ? 'any category' : filterType}.`
               : `There are currently no ${filterType === 'admission' ? 'Admission Enquiries' : 'Quick Messages'}.`}
           </p>
         </div>
       ) : (
-        <div className="bg-white rounded-2xl border border-neutral-200 shadow-xs overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm text-left">
-              <thead className="bg-neutral-50 text-neutral-600 font-bold border-b border-neutral-200 uppercase text-[11px] tracking-wider">
-                <tr>
-                  <th className="px-6 py-4 whitespace-nowrap">Submission Date</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Type</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Applicant / Sender</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Topic / Class Seeking</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Contact Details</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Message / Details</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-neutral-200">
-                {filteredEnquiries.map((enquiry) => {
-                  const isContactForm = enquiry.student_name?.startsWith('Contact Form:')
+        <>
+          {/* Mobile Card Layout (< md) */}
+          <div className="space-y-3.5 md:hidden">
+            {filteredEnquiries.map((enquiry) => {
+              const isContactForm = enquiry.student_name?.startsWith('Contact Form:')
 
-                  return (
-                    <tr key={enquiry.id} className="hover:bg-neutral-50/60 transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap text-neutral-500 text-xs font-medium">
-                        {enquiry.created_at ? format(new Date(enquiry.created_at), 'MMM d, yyyy') : '-'}
-                        <div className="text-[11px] text-neutral-400 font-normal">
-                          {enquiry.created_at ? format(new Date(enquiry.created_at), 'h:mm a') : ''}
-                        </div>
-                      </td>
+              return (
+                <div
+                  key={enquiry.id}
+                  className="bg-white p-4 rounded-2xl border border-neutral-200 shadow-xs space-y-3"
+                >
+                  {/* Header: Date + Type Badge */}
+                  <div className="flex items-center justify-between gap-2 border-b border-neutral-100 pb-2.5">
+                    <span className="text-[11px] text-neutral-500 font-medium">
+                      {enquiry.created_at ? format(new Date(enquiry.created_at), 'MMM d, yyyy • h:mm a') : '-'}
+                    </span>
+                    {isContactForm ? (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        <MessageSquare className="h-3 w-3" /> Quick Message
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-brand-primary border border-blue-200">
+                        <BookOpen className="h-3 w-3" /> Admission
+                      </span>
+                    )}
+                  </div>
 
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        {isContactForm ? (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                            <MessageSquare className="h-3 w-3" /> Quick Message
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-brand-primary border border-blue-200">
-                            <BookOpen className="h-3 w-3" /> Admission Enquiry
-                          </span>
-                        )}
-                      </td>
+                  {/* Applicant Details */}
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <User className="h-4 w-4 text-brand-primary shrink-0" />
+                        <span className="font-bold text-neutral-900 text-sm">{enquiry.parent_name || 'N/A'}</span>
+                      </div>
+                      <span className="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-neutral-100 text-neutral-800 border border-neutral-200">
+                        {enquiry.class_seeking}
+                      </span>
+                    </div>
 
-                      <td className="px-6 py-4 font-medium text-neutral-900">
-                        <div className="flex items-center gap-2">
-                          <User className="h-4 w-4 text-neutral-400 shrink-0" />
-                          <span>{enquiry.parent_name || 'N/A'}</span>
-                        </div>
-                        {!isContactForm && (
-                          <div className="text-xs text-neutral-500 font-normal mt-1 pl-6">
-                            Student: <span className="font-semibold text-neutral-700">{enquiry.student_name}</span>
-                            {enquiry.dob && ` (DOB: ${format(new Date(enquiry.dob), 'dd/MM/yyyy')})`}
-                          </div>
-                        )}
-                      </td>
+                    {!isContactForm && enquiry.student_name && (
+                      <p className="text-xs text-neutral-600 mt-1 pl-6">
+                        Student: <span className="font-semibold text-neutral-800">{enquiry.student_name}</span>
+                        {enquiry.dob && ` (DOB: ${format(new Date(enquiry.dob), 'dd/MM/yyyy')})`}
+                      </p>
+                    )}
+                  </div>
 
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className="inline-block px-3 py-1 rounded-lg text-xs font-semibold bg-neutral-100 text-neutral-800 border border-neutral-200">
-                          {enquiry.class_seeking}
-                        </span>
-                      </td>
+                  {/* Contact Buttons */}
+                  <div className="flex items-center gap-2 pt-1">
+                    <a
+                      href={`tel:${enquiry.phone}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-brand-50 text-brand-primary rounded-xl text-xs font-bold border border-blue-200 active:bg-brand-primary active:text-white transition-colors"
+                    >
+                      <Phone className="h-3.5 w-3.5" />
+                      <span>{enquiry.phone}</span>
+                    </a>
+                    {enquiry.email && (
+                      <a
+                        href={`mailto:${enquiry.email}`}
+                        className="inline-flex items-center justify-center p-2 bg-neutral-100 text-neutral-700 rounded-xl text-xs font-semibold border border-neutral-200 hover:bg-neutral-200 transition-colors"
+                        title={enquiry.email}
+                      >
+                        <Mail className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
 
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-1.5 text-neutral-900 font-medium text-xs">
-                          <Phone className="h-3.5 w-3.5 text-neutral-400" />
-                          <a href={`tel:${enquiry.phone}`} className="hover:underline text-brand-primary font-bold">
-                            {enquiry.phone}
-                          </a>
-                        </div>
-                        {enquiry.email && (
-                          <div className="flex items-center gap-1.5 text-neutral-500 text-xs mt-1">
-                            <Mail className="h-3.5 w-3.5 text-neutral-400" />
-                            <span>{enquiry.email}</span>
-                          </div>
-                        )}
-                      </td>
-
-                      <td className="px-6 py-4 text-neutral-600 text-xs leading-relaxed max-w-xs">
-                        {enquiry.previous_school ? (
-                          <p className="line-clamp-2 bg-neutral-50 p-2 rounded-lg border border-neutral-100">
-                            {enquiry.previous_school}
-                          </p>
-                        ) : (
-                          <span className="text-neutral-400 italic">No additional message</span>
-                        )}
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
+                  {/* Message Content if available */}
+                  {enquiry.previous_school && (
+                    <div className="text-xs text-neutral-600 bg-neutral-50 p-2.5 rounded-xl border border-neutral-100 leading-relaxed">
+                      <span className="font-semibold text-neutral-700 block mb-0.5">Details/Message:</span>
+                      <p className="whitespace-pre-line">{enquiry.previous_school}</p>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
-        </div>
+
+          {/* Desktop Table View (>= md) */}
+          <div className="hidden md:block bg-white rounded-2xl border border-neutral-200 shadow-xs overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm text-left">
+                <thead className="bg-neutral-50 text-neutral-600 font-bold border-b border-neutral-200 uppercase text-[11px] tracking-wider">
+                  <tr>
+                    <th className="px-6 py-4 whitespace-nowrap">Submission Date</th>
+                    <th className="px-6 py-4 whitespace-nowrap">Type</th>
+                    <th className="px-6 py-4 whitespace-nowrap">Applicant / Sender</th>
+                    <th className="px-6 py-4 whitespace-nowrap">Topic / Class Seeking</th>
+                    <th className="px-6 py-4 whitespace-nowrap">Contact Details</th>
+                    <th className="px-6 py-4 whitespace-nowrap">Message / Details</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200">
+                  {filteredEnquiries.map((enquiry) => {
+                    const isContactForm = enquiry.student_name?.startsWith('Contact Form:')
+
+                    return (
+                      <tr key={enquiry.id} className="hover:bg-neutral-50/60 transition-colors">
+                        <td className="px-6 py-4 whitespace-nowrap text-neutral-500 text-xs font-medium">
+                          {enquiry.created_at ? format(new Date(enquiry.created_at), 'MMM d, yyyy') : '-'}
+                          <div className="text-[11px] text-neutral-400 font-normal">
+                            {enquiry.created_at ? format(new Date(enquiry.created_at), 'h:mm a') : ''}
+                          </div>
+                        </td>
+
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {isContactForm ? (
+                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                              <MessageSquare className="h-3 w-3" /> Quick Message
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-brand-primary border border-blue-200">
+                              <BookOpen className="h-3 w-3" /> Admission Enquiry
+                            </span>
+                          )}
+                        </td>
+
+                        <td className="px-6 py-4 font-medium text-neutral-900">
+                          <div className="flex items-center gap-2">
+                            <User className="h-4 w-4 text-neutral-400 shrink-0" />
+                            <span>{enquiry.parent_name || 'N/A'}</span>
+                          </div>
+                          {!isContactForm && (
+                            <div className="text-xs text-neutral-500 font-normal mt-1 pl-6">
+                              Student: <span className="font-semibold text-neutral-700">{enquiry.student_name}</span>
+                              {enquiry.dob && ` (DOB: ${format(new Date(enquiry.dob), 'dd/MM/yyyy')})`}
+                            </div>
+                          )}
+                        </td>
+
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <span className="inline-block px-3 py-1 rounded-lg text-xs font-semibold bg-neutral-100 text-neutral-800 border border-neutral-200">
+                            {enquiry.class_seeking}
+                          </span>
+                        </td>
+
+                        <td className="px-6 py-4">
+                          <div className="flex items-center gap-1.5 text-neutral-900 font-medium text-xs">
+                            <Phone className="h-3.5 w-3.5 text-neutral-400" />
+                            <a href={`tel:${enquiry.phone}`} className="hover:underline text-brand-primary font-bold">
+                              {enquiry.phone}
+                            </a>
+                          </div>
+                          {enquiry.email && (
+                            <div className="flex items-center gap-1.5 text-neutral-500 text-xs mt-1">
+                              <Mail className="h-3.5 w-3.5 text-neutral-400" />
+                              <span>{enquiry.email}</span>
+                            </div>
+                          )}
+                        </td>
+
+                        <td className="px-6 py-4 text-neutral-600 text-xs leading-relaxed max-w-xs">
+                          {enquiry.previous_school ? (
+                            <p className="line-clamp-2 bg-neutral-50 p-2 rounded-lg border border-neutral-100">
+                              {enquiry.previous_school}
+                            </p>
+                          ) : (
+                            <span className="text-neutral-400 italic">No additional message</span>
+                          )}
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
       )}
     </div>
   )

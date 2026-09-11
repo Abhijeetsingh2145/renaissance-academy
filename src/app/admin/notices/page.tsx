@@ -27,7 +27,7 @@ export default async function NoticesPage() {
     .order('created_at', { ascending: false })
 
   return (
-    <div className="p-6 md:p-10 max-w-7xl mx-auto">
+    <div className="p-4 sm:p-6 md:p-10 max-w-7xl mx-auto">
       {error ? (
         <div className="bg-red-50 text-red-600 p-4 rounded-lg border border-red-200">
           <p className="font-semibold">Failed to load notices.</p>
