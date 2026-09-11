@@ -143,7 +143,6 @@ export default function Page() {
                 <div className="bg-brand-50 p-4 rounded-xl border border-brand-100 text-center">
                   <h3 className="font-bold text-brand-900 text-base">Mrs. Kanak Pandey</h3>
                   <p className="text-xs text-brand-700 font-medium">Principal & Academic Leader</p>
-                  <p className="text-[11px] text-neutral-500 mt-0.5">M.A., B.Ed.</p>
                 </div>
               </div>
 
