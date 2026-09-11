@@ -22,6 +22,7 @@ export default function GalleryPage() {
     { src: '/indoor-games.jpg', caption: 'Indoor Games Arena' },
     { src: '/auditorium.jpg', caption: 'School Assembly Auditorium' },
     { src: '/music-room.jpg', caption: 'Music & Arts Studio' },
+    { src: '/medical-room.jpg', caption: 'Medical & First Aid Room' },
     { src: '/school-transport.jpg', caption: 'School Bus Fleet & Transport' },
     { src: '/kids-learning-hub.jpg', caption: 'Junior Activity & Learning Hub' },
     { src: '/gallery-1.jpg', caption: 'Renaissance Academy Campus View 1' },

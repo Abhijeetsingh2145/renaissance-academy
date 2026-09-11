@@ -24,7 +24,7 @@ import {
 
 export const metadata = {
   title: { absolute: 'Campus & Facilities | Renaissance Academy, Gorakhpur' },
-  description: 'Explore campus facilities including science labs, computer lab, modern library, medical room, music room, auditorium, junior interactive learning hub, and student counsellor at Renaissance Academy, Gorakhpur.',
+  description: 'Explore campus facilities including science labs, computer lab, modern library, medical room, music room, auditorium, junior interactive learning hub, and school transport at Renaissance Academy, Gorakhpur.',
   alternates: {
     canonical: 'https://renaissanceacademy.org.in/campus',
   },
@@ -112,18 +112,10 @@ export default function Page() {
       variant: 'surface-cream' as const,
     },
     { 
-      title: 'In-House Student Counsellor', 
-      desc: 'Qualified resident counsellor offering personal guidance, emotional wellness care, and career mentorship.', 
-      asset: 'Student Counselling', 
-      theme: 'gold' as const,
-      icon: UserCheck,
-      badge: 'Special Feature',
-      variant: 'surface-yellow' as const,
-    },
-    { 
       title: 'Medical & First Aid Room', 
       desc: 'Dedicated healthcare corner equipped with first-aid facilities and emergency care for student wellness.', 
       asset: 'Medical Room', 
+      image: '/medical-room.jpg',
       theme: 'mint' as const,
       icon: Stethoscope,
       badge: 'Healthcare',
@@ -140,24 +132,6 @@ export default function Page() {
       variant: 'surface-coral' as const,
     },
     { 
-      title: 'Complete CCTV Security', 
-      desc: 'Round-the-clock camera monitoring and perimeter security ensuring complete safety across campus.', 
-      asset: 'CCTV Security', 
-      theme: 'neutral' as const,
-      icon: ShieldCheck,
-      badge: '24/7 Security',
-      variant: 'surface-neutral' as const,
-    },
-    { 
-      title: 'RO Purified Drinking Water', 
-      desc: 'Hygiene-first chilled RO drinking water dispensers installed conveniently across all campus wings.', 
-      asset: 'RO Water Station', 
-      theme: 'sky' as const,
-      icon: Droplet,
-      badge: 'Clean Water',
-      variant: 'surface-sky' as const,
-    },
-    { 
       title: 'School Transport Fleet', 
       desc: 'Safe, dedicated bus fleet covering major routes in Gorakhpur with trained drivers and attendants.', 
       asset: 'School Transport', 
@@ -166,15 +140,6 @@ export default function Page() {
       icon: Bus,
       badge: 'Safe Commute',
       variant: 'surface-mint' as const,
-    },
-    { 
-      title: 'Fire & Power Safety', 
-      desc: 'Certified fire safety equipment, regular drills, and full generator power backup across all classrooms.', 
-      asset: 'Power & Fire Safety', 
-      theme: 'coral' as const,
-      icon: Flame,
-      badge: 'Safety Compliance',
-      variant: 'surface-coral' as const,
     },
   ]
 

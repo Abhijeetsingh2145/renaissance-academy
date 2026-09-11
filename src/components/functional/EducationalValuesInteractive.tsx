@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  BookOpen, 
+  Stethoscope, 
   UserCheck, 
   Trophy, 
   HeartHandshake, 
@@ -42,11 +42,11 @@ export interface PillarDetail {
 const pillars: PillarDetail[] = [
   {
     id: 0,
-    title: 'K-12 CBSE Excellence',
-    shortDesc: 'Complete academic pathway from Nursery to Class 12th with interactive smart learning.',
-    fullDesc: 'Renaissance Academy provides a seamless educational journey following the CBSE curriculum. From foundational phonics in Nursery to Board exam prep in Senior Secondary, our approach emphasizes concept clarity.',
-    icon: BookOpen,
-    badge: 'ACADEMIC FRAMEWORK',
+    title: 'In-House Medical Team',
+    shortDesc: 'Dedicated on-campus medical team providing immediate first aid, health checks, and emergency response.',
+    fullDesc: 'Renaissance Academy prioritizes student health and safety with a dedicated on-campus medical team and infirmary. Our trained medical staff provides immediate first aid, routine health checkups, and swift emergency coordination so every student stays safe and well cared for.',
+    icon: Stethoscope,
+    badge: 'HEALTH & SAFETY',
     bgColor: 'bg-[#FFF9D8]',
     badgeClass: 'bg-[#FEF9C3] text-amber-900 border-amber-300',
     accentClasses: {
@@ -59,15 +59,15 @@ const pillars: PillarDetail[] = [
       dotBg: 'bg-amber-500'
     },
     highlights: [
-      'Structured CBSE Board Syllabus from Nursery to Class XII',
-      'Smart Classrooms with audio-visual teaching aids',
-      'Continuous assessment, term evaluations & doubt clearing',
-      'Fully-equipped Science, Mathematics & Computer laboratories'
+      'Trained full-time medical & first-aid team on campus',
+      'Fully-equipped first-aid infirmary & emergency response',
+      'Routine student health checkups & growth tracking',
+      'Immediate parent notifications & emergency coordination'
     ],
     metrics: [
-      { label: 'Curriculum', value: 'CBSE K-12' },
-      { label: 'Classrooms', value: 'Smart AV Equipped' },
-      { label: 'Methodology', value: 'Concept Clarity' }
+      { label: 'Medical Care', value: 'Dedicated Team' },
+      { label: 'Facility', value: 'On-Campus Infirmary' },
+      { label: 'Response', value: 'Immediate First Aid' }
     ]
   },
   {

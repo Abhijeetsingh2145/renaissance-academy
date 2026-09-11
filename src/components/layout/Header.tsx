@@ -11,6 +11,7 @@ const navGroups = [
   {
     name: 'About Us',
     links: [
+      { name: 'About Renaissance', href: '/about' },
       { name: 'Vision & Mission', href: '/vision-mission' },
       { name: 'Meet Our Leadership', href: '/principal-message' },
       { name: 'School Policies', href: '/policies' },

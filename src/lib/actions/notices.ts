@@ -58,7 +58,8 @@ export async function createNotice(formData: FormData) {
   }
 
   revalidatePath('/admin/notices')
-  revalidatePath('/') // Revalidate public notice board
+  revalidatePath('/')
+  revalidatePath('/events')
   return { success: true }
 }
 
@@ -91,6 +92,7 @@ export async function updateNotice(id: string, formData: FormData) {
 
   revalidatePath('/admin/notices')
   revalidatePath('/')
+  revalidatePath('/events')
   return { success: true }
 }
 
@@ -109,5 +111,6 @@ export async function deleteNotice(id: string) {
 
   revalidatePath('/admin/notices')
   revalidatePath('/')
+  revalidatePath('/events')
   return { success: true }
 }

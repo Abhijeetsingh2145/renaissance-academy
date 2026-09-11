@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '@/components/layout/Container'
 import { H1, H2, Text } from '@/components/ui/Typography'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { Quote, Award, ShieldCheck, UserCheck } from 'lucide-react'
 
@@ -38,11 +39,12 @@ export default function Page() {
           <div className="bg-white rounded-2xl border border-amber-200/80 p-8 md:p-10 shadow-2xs">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="w-full md:w-4/12 shrink-0 space-y-3">
-                <PlaceholderImage 
-                  assetName="Chairman Portrait" 
-                  aspectRatio="portrait"
-                  themeVariant="cream"
-                  className="w-full shadow-sm rounded-xl overflow-hidden" 
+                <ZoomableImage 
+                  src="/chairman.jpg"
+                  alt="Chairman Portrait" 
+                  width={400}
+                  height={500}
+                  className="w-full h-auto shadow-sm rounded-xl overflow-hidden object-cover" 
                 />
                 <div className="bg-surface-cream p-4 rounded-xl border border-amber-200 text-center">
                   <h3 className="font-bold text-brand-primary text-base">Chairman</h3>
