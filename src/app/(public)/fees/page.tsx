@@ -43,46 +43,99 @@ export default function FeesPage() {
               </span>
             </div>
 
-            {/* Desktop Table View */}
+            {/* Desktop & Mobile Responsive Table View */}
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[600px]">
+              <table className="w-full text-left border-collapse min-w-[800px]">
                 <thead>
-                  <tr className="bg-brand-primary text-white text-sm font-semibold">
-                    <th className="py-4 px-6 rounded-tl-xl">Fee Details</th>
-                    <th className="py-4 px-6 text-center">Class I to V</th>
-                    <th className="py-4 px-6 text-center">Class VI to VIII</th>
-                    <th className="py-4 px-6 text-center">Class IX & X</th>
-                    <th className="py-4 px-6 text-center rounded-tr-xl">Class XI & XII</th>
+                  <tr className="bg-brand-primary text-white text-xs md:text-sm font-semibold">
+                    <th className="py-4 px-4 rounded-tl-xl whitespace-nowrap">Fee Head</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">Nursery</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">LKG–UKG</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">Class I–III</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">Class IV–VI</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">Class VII–VIII</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">Class IX–X</th>
+                    <th className="py-4 px-3 text-center whitespace-nowrap">Class XI–XII (Sci)</th>
+                    <th className="py-4 px-3 text-center rounded-tr-xl whitespace-nowrap">Class XI–XII (Comm)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-200 text-sm">
+                <tbody className="divide-y divide-neutral-200 text-xs md:text-sm">
                   <tr className="hover:bg-neutral-50/80 transition-colors">
-                    <td className="py-4 px-6 font-semibold text-neutral-900">Admission Fee</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹2,000</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹4,000</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹6,000</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹8,000</td>
+                    <td className="py-3.5 px-4 font-semibold text-neutral-900">Admission Fees <span className="text-neutral-500 font-normal text-xs block sm:inline">(One Time)</span></td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹2,000</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹2,500</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹3,000</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹3,500</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹4,500</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹6,500</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹8,500</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹8,500</td>
                   </tr>
                   <tr className="hover:bg-neutral-50/80 transition-colors">
-                    <td className="py-4 px-6 font-semibold text-neutral-900">Tuition Fee (Yearly)</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹26,040</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹33,840</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹42,000</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹49,200</td>
+                    <td className="py-3.5 px-4 font-semibold text-neutral-900">Annual Composite Fee <span className="text-neutral-500 font-normal text-xs block sm:inline">(Quarterly)</span></td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹5,850</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹6,030</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹8,040</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹8,880</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹10,500</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹12,390</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹16,740</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹14,760</td>
                   </tr>
                   <tr className="hover:bg-neutral-50/80 transition-colors">
-                    <td className="py-4 px-6 font-semibold text-neutral-900">Development Charges (Yearly)</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹0</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹0</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹0</td>
-                    <td className="py-4 px-6 text-center font-medium text-neutral-700">₹0</td>
+                    <td className="py-3.5 px-4 font-semibold text-neutral-900">Exam Fees <span className="text-neutral-500 font-normal text-xs block sm:inline">(Quarterly)</span></td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹150</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹150</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹255</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹285</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹345</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹600</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹750</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹750</td>
                   </tr>
-                  <tr className="hover:bg-neutral-50/80 transition-colors bg-brand-50/30">
-                    <td className="py-4 px-6 font-semibold text-neutral-900">Annual Other Facilities Charges (Quarterly)</td>
-                    <td className="py-4 px-6 text-center font-medium text-brand-900">₹420</td>
-                    <td className="py-4 px-6 text-center font-medium text-brand-900">₹840</td>
-                    <td className="py-4 px-6 text-center font-medium text-brand-900">₹960</td>
-                    <td className="py-4 px-6 text-center font-medium text-brand-900">₹1,020</td>
+                  <tr className="hover:bg-neutral-50/80 transition-colors">
+                    <td className="py-3.5 px-4 font-semibold text-neutral-900">ID Card <span className="text-neutral-500 font-normal text-xs block sm:inline">(Annual)</span></td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                    <td className="py-3.5 px-3 text-center font-medium text-neutral-700">₹100</td>
+                  </tr>
+                  <tr className="bg-neutral-100/70 font-semibold border-t border-neutral-300">
+                    <td className="py-3.5 px-4 text-brand-primary">Quarterly Installment <span className="text-neutral-500 font-normal text-xs block sm:inline">(Jul, Oct, Jan)</span></td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹6,000</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹6,180</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹8,295</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹9,165</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹10,845</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹12,990</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹17,490</td>
+                    <td className="py-3.5 px-3 text-center text-brand-primary">₹15,510</td>
+                  </tr>
+                  <tr className="bg-brand-50/60 font-semibold border-t border-brand-200">
+                    <td className="py-3.5 px-4 text-brand-900">Total 1st Qtr Fee <span className="text-brand-700 font-normal text-xs block sm:inline">(April - New Admission)</span></td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹8,100</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹8,780</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹11,395</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹12,765</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹15,445</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹19,590</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹26,090</td>
+                    <td className="py-3.5 px-3 text-center text-brand-900 font-bold">₹24,110</td>
+                  </tr>
+                  <tr className="bg-brand-100/50 font-bold border-t-2 border-brand-300">
+                    <td className="py-3.5 px-4 text-neutral-900">Total Annual Fee <span className="text-neutral-600 font-normal text-xs block sm:inline">(1st Year Complete)</span></td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹26,100</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹27,320</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹36,280</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹40,260</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹47,980</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹58,560</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹78,560</td>
+                    <td className="py-3.5 px-3 text-center text-neutral-900">₹70,640</td>
                   </tr>
                 </tbody>
               </table>
