@@ -42,14 +42,14 @@ export const defaultFAQs: FAQItem[] = [
   {
     id: 'faq-5',
     category: 'Fees',
-    question: 'What is the fee payment schedule for the academic year 2025–26?',
+    question: 'What is the fee payment schedule for the academic year 2026–27?',
     answer: 'Tuition fees are structured transparently and paid in quarterly installments. Details regarding composite monthly fees, admission fees, and annual charges can be viewed on our Fee Structure page.',
   },
   {
     id: 'faq-6',
     category: 'Fees',
     question: 'Are there any hidden or unexpected extra charges during the session?',
-    answer: 'No. Renaissance Academy strictly maintains transparent fee schedules with zero hidden charges. All approved fees are listed upfront in the 2025–26 official fee document.',
+    answer: 'No. Renaissance Academy strictly maintains transparent fee schedules with zero hidden charges. All approved fees are listed upfront in the 2026–27 official fee document.',
   },
   {
     id: 'faq-7',

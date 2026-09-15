@@ -9,8 +9,8 @@ import { Info, HelpCircle } from 'lucide-react'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 
 export const metadata = {
-  title: { absolute: 'Fee Structure 2025–26 | Renaissance Academy' },
-  description: 'Official fee schedule for Renaissance Academy, Gorakhpur for the academic session 2025–26.',
+  title: { absolute: 'Fee Structure 2026–27 | Renaissance Academy' },
+  description: 'Official fee schedule for Renaissance Academy, Gorakhpur for the academic session 2026–27.',
   alternates: {
     canonical: 'https://renaissanceacademy.org.in/fees',
   },
@@ -22,7 +22,7 @@ export default function FeesPage() {
       {/* Hero Section */}
       <div className="bg-brand-primary text-white py-10 md:py-12 border-b-4 border-accent-gold">
         <Container>
-          <H1 className="text-white mb-2 text-3xl md:text-4xl font-bold tracking-tight">Fee Structure (2025–26)</H1>
+          <H1 className="text-white mb-2 text-3xl md:text-4xl font-bold tracking-tight">Fee Structure (2026–27)</H1>
           <Text className="text-blue-100 text-base md:text-lg">
             Transparent, competitive fee schedules designed to support quality education and student facilities at Renaissance Academy.
           </Text>
@@ -39,7 +39,7 @@ export default function FeesPage() {
                 <p className="text-xs md:text-sm text-neutral-500 font-medium">All figures listed in Indian Rupees (₹)</p>
               </div>
               <span className="bg-surface-yellow text-amber-900 text-xs font-bold px-3.5 py-1.5 rounded-full border border-amber-300 shadow-xs">
-                Session 2025–26
+                Session 2026–27
               </span>
             </div>
 
@@ -145,7 +145,7 @@ export default function FeesPage() {
             <div className="mt-8 bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start space-x-3 text-amber-900 text-sm">
               <Info className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                Fee information shown above is for the academic session 2025–26. Parents/guardians should contact the school for confirmation of the applicable fee structure for the upcoming admission session.
+                Fee information shown above is for the academic session 2026–27. Parents/guardians should contact the school for confirmation of the applicable fee structure for the upcoming admission session.
               </p>
             </div>
           </CardContent>

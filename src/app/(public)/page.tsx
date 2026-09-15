@@ -283,7 +283,7 @@ export default function Home() {
             <div className="p-8 sm:p-12 rounded-[calc(3rem-0.75rem)] bg-brand-primary border border-white/10 text-center">
               <FadeUp>
                 <span className="inline-flex items-center gap-2 bg-accent-gold/20 text-accent-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-5 border border-accent-gold/30">
-                  <Sparkles className="h-3.5 w-3.5 text-accent-gold" /> Admissions Open 2025-26 (Nursery to Class XII)
+                  <Sparkles className="h-3.5 w-3.5 text-accent-gold" /> Admissions Open 2026-27 (Nursery to Class XII)
                 </span>
                 
                 <H2 className="text-white mb-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
