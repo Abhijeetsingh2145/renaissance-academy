@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   },
   description: 'Renaissance Academy is a co-educational English-medium school located in Baijnathpur, Balapar Road, Gorakhpur, Uttar Pradesh.',
   icons: {
-    icon: '/logo.png',
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/icon.png',
     apple: '/logo.png',
   },
   openGraph: {
