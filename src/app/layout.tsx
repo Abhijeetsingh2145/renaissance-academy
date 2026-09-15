@@ -51,6 +51,7 @@ export const metadata: Metadata = {
 
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
 import { ImageLightboxProvider } from '@/components/providers/ImageLightboxProvider'
+import { Analytics } from '@vercel/analytics/next'
 
 export default function RootLayout({
   children,
@@ -68,6 +69,7 @@ export default function RootLayout({
             {children}
           </ImageLightboxProvider>
         </SmoothScrollProvider>
+        <Analytics />
       </body>
     </html>
   )
