@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -268,11 +269,15 @@ export function AdmissionsClient() {
               </div>
             </div>
 
-            <PlaceholderImage 
-              assetName="Student Learning & Admission Helpdesk" 
-              aspectRatio="video" 
-              className="w-full shadow-md rounded-2xl overflow-hidden"
-            />
+            <div className="relative w-full h-[240px] md:h-[280px] shadow-md rounded-2xl overflow-hidden group border border-neutral-200">
+              <Image 
+                src="/desk.jpeg"
+                alt="Student Learning & Admission Helpdesk"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 1024px) 100vw, 400px"
+              />
+            </div>
           </div>
 
         </div>
